@@ -10,7 +10,7 @@ from adafruit_circuitplayground import cp
 # text scaling factor
 TEXT_SCALE = 2
 
-# previous iterature button value
+# previous iteration button value
 old_a_val = cp.button_a
 
 # boolean for current unit type
@@ -18,7 +18,7 @@ show_c_units = True
 
 # function to convert celsius degrees to fahrenheit
 def c_to_f(c_val):
-   return (c_val * 9/5) + 32
+    return (c_val * 9/5) + 32
 
 # Open the background image file
 with open("/temperature_background.bmp", "rb") as bitmap_file:
@@ -73,6 +73,7 @@ with open("/temperature_background.bmp", "rb") as bitmap_file:
             # Update the text
             text_area.text = "%.2f F" % (round(c_to_f(cp.temperature), 2))
 
+        # set previous button value for next time
         old_a_val = cur_a_val
-        # Wait a little bit before next time
+        # Wait a little bit
         time.sleep(0.05)
