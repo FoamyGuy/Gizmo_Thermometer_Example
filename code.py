@@ -16,9 +16,11 @@ old_a_val = cp.button_a
 # boolean for current unit type
 show_c_units = True
 
+
 # function to convert celsius degrees to fahrenheit
 def c_to_f(c_val):
     return (c_val * 9/5) + 32
+
 
 # Open the background image file
 with open("/temperature_background.bmp", "rb") as bitmap_file:
@@ -69,7 +71,7 @@ with open("/temperature_background.bmp", "rb") as bitmap_file:
         if show_c_units:
             # Update the text
             text_area.text = "%.2f C" % (round(cp.temperature, 2))
-        else: # show f units
+        else:  # show f units
             # Update the text
             text_area.text = "%.2f F" % (round(c_to_f(cp.temperature), 2))
 
